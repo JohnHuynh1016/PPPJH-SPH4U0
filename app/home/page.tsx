@@ -48,7 +48,7 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto px-6 py-20">
         {/* Header Context */}
         <div className="text-left mb-16 max-w-xl">
-          <span className="text-blue-600 font-bold text-xs uppercase tracking-widest">#1</span>
+          <span className="text-blue-600 font-bold text-xs uppercase tracking-widest">___</span>
           <h3 className="text-4xl font-black text-gray-900 mt-2">My Passions</h3>
         </div>
 
@@ -60,17 +60,16 @@ export default function HomePage() {
             <div className="bg-gray-100 border border-gray-200 aspect-[3/4] rounded-3xl flex items-center justify-center text-gray-400 overflow-hidden shadow-sm relative group-hover:shadow-md transition-shadow">
               <Image 
                 src="/twdpng.png"
-                alt="Description of your image"
+                alt="Taekwondo Black Belt World"
                 fill
                 sizes="(max-width: 768px) 100vw, 33vw"
                 className="object-cover"
                 priority
               />
-              <span className="text-xs uppercase font-medium tracking-wider">[ 3:4 Tall Image ]</span>
             </div>
             <div className="px-2">
               <h4 className="font-bold text-lg text-gray-900">Taekwondo</h4>
-              <p className="text-sm text-gray-500 mt-1">Learning martial arts is more of a physical passion for me. I first started learning martial arts during the pandemic, where everything feels isolated, and nothing was available for me at the time. I never liked the idea of fighting other people, but ever since enrolling in Black Belts World Taekwondo, I learnt that doing martial arts brings more than glory and violence. It meant knowing how to protect your loved ones and flexibility over my health
+              <p className="text-sm text-gray-500 mt-1">Taekwondo became one of my first major physical interests during the pandemic, a period when many activities were unavailable and daily life often felt isolated. Although I was initially uncomfortable with the idea of fighting, I discovered after joining Black Belt World Taekwondo that martial arts involve much more than competition. It meant knowing the importance of protecting myself and the people I care about. Taekwondo has taught me discipline and also encouraged me to take greater responsibility for my physical health and personal development.
               </p>
             </div>
           </div>
@@ -80,13 +79,12 @@ export default function HomePage() {
             <div className="bg-gray-900 aspect-square rounded-3xl flex items-center justify-center text-gray-500 overflow-hidden shadow-lg relative">
               <Image 
                 src="/calvinjohnmaxim.jpg"
-                alt="Description of your image"
+                alt="Snow Show 2025"
                 fill
                 sizes="(max-width: 768px) 100vw, 33vw"
                 className="object-cover"
                 priority
               />
-              <span className="text-xs uppercase font-medium tracking-wider text-gray-400">[ 1:1 Square Image ]</span>
             </div>
             <div className="px-2">
               <h4 className="font-bold text-lg text-gray-900">Music</h4>
@@ -100,13 +98,12 @@ export default function HomePage() {
             <div className="bg-gray-100 border border-gray-200 aspect-[4/3] rounded-3xl flex items-center justify-center text-gray-400 overflow-hidden shadow-sm relative group-hover:shadow-md transition-shadow">
               <Image 
                 src="/unitycomp.png"
-                alt="Description of your image"
+                alt="1016project"
                 fill
                 sizes="(max-width: 768px) 100vw, 33vw"
                 className="object-cover"
                 priority
               />
-              <span className="text-xs uppercase font-medium tracking-wider">[ 4:3 Wide Image ]</span>
             </div>
             <div className="px-2">
               <h4 className="font-bold text-lg text-gray-900">Computation</h4>
@@ -118,36 +115,59 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto px-6 py-20">
 
         {/* 🗺️ Horizontal 2-Row Grid Container */}
-        <div>
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-6 items-stretch md:translate-y-1 transition-transform duration-500 hover:-translate-y-1">
-            {/* Block 1 (Wide Image): Takes up 2 columns out of 5 */}
-            <div className="md:col-span-2 bg-gray-100 border border-gray-200 aspect-[21/9] md:aspect-auto rounded-3xl flex items-center justify-center text-gray-400 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-              <span className="text-xs uppercase font-medium tracking-wider">[ 21:9 Ultra-Wide Image ]</span>
-            </div>
-
-            {/* Block 2 (Text Context): Takes up 3 columns out of 5 */}
-            <div className="md:col-span-3 bg-blue-50 border border-blue-100 rounded-3xl p-8 flex flex-col justify-center text-left">
-              <h4 className="font-bold text-lg text-gray-900 mb-3">Biking</h4>
-              <p className="text-sm text-gray-600 leading-relaxed">
-                I have a preposterous passion for biking. On the other hand from my other passions being adopted early on, biking as a hobby just came to me naturally. Back then, during quarantine times, I had all the time to myself staying at my old apartment. I also had on a bucket list of things I’d like to learn and I stumbled upon getting started on my bike. Fascinated by the vehicle’s fuel efficiency, none at all, I was determined to learn how to ride my bike as if it was the first thing I’d take up on. Fast forward to today, my bike to me was like faster-than-walking transportation, plus benefits. Every time I rode on my bike it was always so refreshing and I was gifted upon amazing sceneries. Me and my dear friend Calvin had done so many incredible feats like biking 50km to High Park and 20km to Jack Dorling Memorial Park.
-              </p>
+        <div className="space-y-6"> {/* Unified row spacing */}
+        
+        {/* Row 1: Biking */}
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-6 items-stretch md:translate-y-1 transition-transform duration-500 hover:-translate-y-1">
+          
+          {/* Block 1 (Wide Image Box): Isolated inside md:col-span-2 */}
+          <div className="md:col-span-2">
+            <div className="w-full h-full min-h-[200px] md:min-h-[300px] aspect-[21/9] md:aspect-auto bg-gray-100 border border-gray-200 rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-shadow relative">
+              <Image 
+                src="/20260628_094939.jpg"
+                alt="biking with calvin to High Park"
+                fill
+                sizes="(max-width: 768px) 100vw, 40vw"
+                className="object-cover"
+              />
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-6 items-stretch pt-6 md:translate-y-1 transition-transform duration-500 hover:-translate-y-1">
-            {/* Block 3 (Text Context): Takes up 3 columns out of 5 */}
-            <div className="md:col-span-3 bg-gray-900 rounded-3xl p-8 flex flex-col justify-center text-left text-white order-4 md:order-3">
-              <h4 className="font-bold text-lg text-white mb-3">Math</h4>
-              <p className="text-sm text-gray-400 leading-relaxed">
-                Math. I adore it as a passion because math isn’t just about doing the number work, it’s about problem-solving. And the privilege to brainstorm solutions to a problem for me is the way I want to express myself, to try and come up with solutions to problems at work, problems with numbers, problems that can generate meaningful solutions. Thanks to math, I was able to meet such amazing and like-minded people, in an open environment. They help encourage me to participate in contests like the Euclid contest, utilizing not only my knowledge on math, but also tackle the unique challenges that you would need to think logically to solve.
-              </p>
-            </div>
 
-            {/* Block 4 (Wide Image): Takes up 2 columns out of 5 */}
-            <div className="md:col-span-2 bg-gray-100 border border-gray-200 aspect-[21/9] md:aspect-auto rounded-3xl flex items-center justify-center text-gray-400 overflow-hidden shadow-sm hover:shadow-md transition-shadow order-3 md:order-4">
-              <span className="text-xs uppercase font-medium tracking-wider">[ 21:9 Inverted Ultra-Wide Image ]</span>
-            </div>
+          {/* Block 2 (Text Box) */}
+          <div className="md:col-span-3 bg-blue-50 border border-blue-100 rounded-3xl p-8 flex flex-col justify-center text-left">
+            <h4 className="font-bold text-lg text-gray-900 mb-3">Biking</h4>
+            <p className="text-sm text-gray-600 leading-relaxed">
+              On the contrary of early passions, biking became a hobby during quarantine, when I had more time to explore new activities. I was initially attracted to cycling because it was an efficient and environmentally friendly form of transportation, but it soon became much more than that. Cycling gives me an opportunity to stay active, clear my mind, and experience new places. Every time I rode on my bike it was always so refreshing and I was gifted upon such amazing sceneries. <br/><br/> My friend Calvin Holselth and I have completed several long-distance rides, including a 50-kilometre trip to High Park and a 20-kilometre trip to Jack Darling Memorial Park. These rides have strengthened my endurance and confidence while giving me the chance to enjoy memorable experiences with a close friend.
+            </p>
           </div>
         </div>
+
+        {/* Row 2: Math */}
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-6 items-stretch md:translate-y-1 transition-transform duration-500 hover:-translate-y-1">
+          
+          {/* Block 3 (Text Box): Placed first in code for natural DOM rendering */}
+          <div className="md:col-span-3 bg-gray-900 rounded-3xl p-8 flex flex-col justify-center text-left text-white order-2 md:order-1">
+            <h4 className="font-bold text-lg text-white mb-3">Math</h4>
+            <p className="text-sm text-gray-400 leading-relaxed">
+              Mathematics appeals to me because it is not simply about working with numbers; it is about analyzing problems and developing effective solutions. I enjoy the process of considering different approaches, testing ideas, and using logic to reach a conclusion. For me, mathematics is a meaningful way to express creativity and persistence. Through mathematics was I able to meet so many like-minded and supportive people, in an open environment. They encouraged me to participate in contests like the Waterloo Euclid Mathematics contest, utilizing critical thinking into solving unfamiliar and challenging problems. These experiences have improved my logical thinking and shown me the value of approaching difficult questions with patience and curiosity.
+            </p>
+          </div>
+
+          {/* Block 4 (Wide Image Box): Placed second in code, isolated inside md:col-span-2 */}
+          <div className="md:col-span-2 order-1 md:order-2">
+            <div className="w-full h-full min-h-[200px] md:min-h-[300px] aspect-[21/9] md:aspect-auto bg-gray-100 border border-gray-200 rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-shadow relative">
+              <Image 
+                src="/maths.jpg"
+                alt="a random picture of my board"
+                fill
+                sizes="(max-width: 768px) 100vw, 40vw"
+                className="object-cover"
+              />
+            </div>
+          </div>
+
+        </div>
+      </div>
 </div>
 
       </div>

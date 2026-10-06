@@ -82,12 +82,12 @@ export default function FloatingNav() {
                 External Link
             </span>
             <a
-                href="https://open.spotify.com/track/21O0XXPEWPtePt5RMY93Ob?si=df8409b39e01498e"
+                href="https://github.com/JohnHuynh1016/PPPJH-SPH4U0"
                 target="_blank"
                 rel="noreferrer"
                 className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-black transition-colors"
             >
-                🐙 Mad Villain
+                🐙 Website Repository
             </a>
             </div>
         )}
