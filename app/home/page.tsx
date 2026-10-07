@@ -43,7 +43,7 @@ export default function HomePage() {
       >
         <h2 className="text-4xl font-bold mb-4">Post #1: Passions</h2>
         <p className="text-lg text-gray-600 max-w-2xl mb-8">
-          I’m always curious to explore new things and invent different solutions to other people's problems. Something about the nature of leadership, to empower others and multiply yourself has always been the fuel keeping me striving. I like to try to influence others no matter what position I’m in and I feel like that’s my innate passion.
+          I am naturally curious and enjoy exploring new ideas and developing creative solutions to the challenges others face. Something about the nature of leadership, to empower others and multiplying one another has always been the fuel keeping me striving. Regardless of the role I am in, I'm passionate to positively influence those around me.
         </p>
         <div className="max-w-6xl mx-auto px-6 py-20">
         {/* Header Context */}
