@@ -21,6 +21,12 @@
   }
 }
 
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
 html {
   scroll-behavior: smooth !important;
 }

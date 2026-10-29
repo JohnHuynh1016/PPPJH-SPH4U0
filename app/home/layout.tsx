@@ -1,5 +1,6 @@
 // app/(home)/layout.tsx
 import FloatingNav from "@/components/FloatingNav";
+import SplashScreen from "@/components/SplashScreen";
 
 export default function HomeGroupLayout({
   children,
@@ -8,6 +9,7 @@ export default function HomeGroupLayout({
 }) {
   return (
     <>
+      <SplashScreen /> 
       <FloatingNav />
       {children}
     </>

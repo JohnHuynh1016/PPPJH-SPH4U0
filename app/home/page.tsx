@@ -1,7 +1,32 @@
+'use client';
+
 import Image from "next/image";
+import Link from 'next/link';
 import FloatingNav from '@/components/FloatingNav';
+import { useSound } from '@/hooks/useSound';
+import ResearchSlider from '@/components/ResearchSlider';
+import { useEffect } from "react";
 
 export default function HomePage() {
+  const { playHover } = useSound();
+
+  useEffect(() => {
+    if (window.location.hash) {
+      const timer = setTimeout(() => {
+        const id = window.location.hash.replace('#','');
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({
+            behavior:'smooth',
+            block:'start',
+          });
+        }
+      }, 500);
+
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
   return (
     // "scroll-smooth" enables the smooth gliding motion when anchor links are clicked
     <main className="scroll-smooth bg-gray-50 min-h-screen relative text-gray-900">
@@ -11,7 +36,7 @@ export default function HomePage() {
 
       {/* Section 1: Overview */}
       <section 
-        id="home" 
+        id="1" 
         className="min-h-screen flex flex-col justify-center items-center px-6 pt-24 text-center bg-gradient-to-b from-blue-50 to-white relative"
       >
         <div className="max-w-2xl flex flex-col items-center">
@@ -38,7 +63,7 @@ export default function HomePage() {
 
       {/* Section 2: Features */}
       <section 
-        id="features"
+        id="2"
         className="min-h-screen flex flex-col justify-center items-center px-6 pt-28 text-center bg-white"
       >
         <h2 className="text-4xl font-bold mb-4">Post #1: Passions</h2>
@@ -56,7 +81,7 @@ export default function HomePage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
           
           {/* Column 1: Tall / Portrait Focus */}
-          <div className="group space-y-4 md:translate-y-4 transition-transform duration-500 hover:-translate-y-1">
+          <div onMouseEnter={playHover} className="group space-y-4 md:translate-y-4 transition-transform duration-500 hover:-translate-y-1">
             <div className="bg-gray-100 border border-gray-200 aspect-[3/4] rounded-3xl flex items-center justify-center text-gray-400 overflow-hidden shadow-sm relative group-hover:shadow-md transition-shadow">
               <Image 
                 src="/twdpng.png"
@@ -75,7 +100,7 @@ export default function HomePage() {
           </div>
 
           {/* Column 2: Classic Square / Lifted Center */}
-          <div className="group space-y-4 md:-translate-y-6 transition-transform duration-500 hover:-translate-y-10">
+          <div onMouseEnter={playHover} className="group space-y-4 md:-translate-y-6 transition-transform duration-500 hover:-translate-y-10">
             <div className="bg-gray-900 aspect-square rounded-3xl flex items-center justify-center text-gray-500 overflow-hidden shadow-lg relative">
               <Image 
                 src="/calvinjohnmaxim.jpg"
@@ -94,7 +119,7 @@ export default function HomePage() {
           </div>
 
           {/* Column 3: Wide / Landscape Focus */}
-          <div className="group space-y-4 md:translate-y-12 transition-transform duration-500 hover:translate-y-8">
+          <div onMouseEnter={playHover} className="group space-y-4 md:translate-y-12 transition-transform duration-500 hover:translate-y-8">
             <div className="bg-gray-100 border border-gray-200 aspect-[4/3] rounded-3xl flex items-center justify-center text-gray-400 overflow-hidden shadow-sm relative group-hover:shadow-md transition-shadow">
               <Image 
                 src="/unitycomp.png"
@@ -118,7 +143,7 @@ export default function HomePage() {
         <div className="space-y-6"> {/* Unified row spacing */}
         
         {/* Row 1: Biking */}
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-6 items-stretch md:translate-y-1 transition-transform duration-500 hover:-translate-y-1">
+        <div onMouseEnter={playHover} className="grid grid-cols-1 md:grid-cols-5 gap-6 items-stretch md:translate-y-1 transition-transform duration-500 hover:-translate-y-1">
           
           {/* Block 1 (Wide Image Box): Isolated inside md:col-span-2 */}
           <div className="md:col-span-2">
@@ -143,7 +168,7 @@ export default function HomePage() {
         </div>
 
         {/* Row 2: Math */}
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-6 items-stretch md:translate-y-1 transition-transform duration-500 hover:-translate-y-1">
+        <div onMouseEnter={playHover} className="grid grid-cols-1 md:grid-cols-5 gap-6 items-stretch md:translate-y-1 transition-transform duration-500 hover:-translate-y-1">
           
           {/* Block 3 (Text Box): Placed first in code for natural DOM rendering */}
           <div className="md:col-span-3 bg-gray-900 rounded-3xl p-8 flex flex-col justify-center text-left text-white order-2 md:order-1">
@@ -174,22 +199,24 @@ export default function HomePage() {
       </section>
 
       {/* Section 3: Tech Stack */}
-      <section 
+      {/*<section 
         id="tech" 
         className="min-h-screen flex flex-col justify-center items-center px-6 pt-28 text-center bg-gray-50"
       >
         <h2 className="text-4xl font-bold mb-4">Post #2: Research</h2>
         <p className="text-lg text-gray-600 max-w-2xl">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          Do horizontal post (https://eddy-naboulet.dev/) Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </p>
         <div className="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center text-left">
         
       </div>
-      </section>
+      </section>*/}
+      <ResearchSlider />
+
 
       {/* Section 4: Contact */}
       <section 
-        id="contact" 
+        id="4" 
         className="min-h-screen flex flex-col justify-center items-center px-6 text-center bg-white"
       >
         <h2 className="text-4xl font-bold mb-4">Post #3: Topic Selection</h2>
