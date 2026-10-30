@@ -181,4 +181,8 @@ body {
     padding: 0.6rem 1.1rem;
     border-radius: var(--border-radius-soft);
   }
+
+  .gantt .bar-wrapper.gantt-spacer {
+    display: none !important;
+  }
 }

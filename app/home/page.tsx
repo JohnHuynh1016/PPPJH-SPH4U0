@@ -7,12 +7,24 @@ import { useSound } from '@/hooks/useSound';
 import ResearchSlider from '@/components/ResearchSlider';
 import { useEffect } from "react";
 import React from "react";
-import dynamic from 'next/dynamic';
+import { GanttChart, type Task } from '@/components/GanttChart';
 
-const GanttChart = dynamic(
-  () => import('@/components/GanttChart').then((mod) => mod.GanttChart),
-  { ssr: false }
-);
+const mySchedule: Task[] = [
+  {
+    id: 'task-1',
+    name: 'Website Architecture Planning',
+    start: '2026-11-01',
+    end: '2026-11-05',
+    progress: 100,
+  },
+  {
+    id: 'task-2',
+    name: 'Architecture Planning',
+    start: '2026-11-02',
+    end: '2026-11-05',
+    progress: 100,
+  },
+];
 
 export default function HomePage() {
   const { playHover } = useSound();
@@ -33,23 +45,6 @@ export default function HomePage() {
       return () => clearTimeout(timer);
     }
   }, []);
-
-  const mySchedule = [
-    {
-      id: 'task-1',
-      name: 'Website Architecture Planning',
-      start: '2026-11-01',
-      end: '2026-11-05',
-      progress: 100,
-    },
-    {
-      id: 'task-2',
-      name: 'asdasd Architecture Planning',
-      start: '2026-11-02',
-      end: '2026-11-05',
-      progress: 100,
-    },
-  ];
 
   return (
     // "scroll-smooth" enables the smooth gliding motion when anchor links are clicked
@@ -235,11 +230,30 @@ export default function HomePage() {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </p>
       </section>
-        <div style={{ padding: '40px' }}>
-          <h1>My Schedule</h1>
-          {/* 3. Render your component */}
+      <section
+        id="schedule"
+        className="bg-gray-50 px-6 py-20"
+      >
+        <div className="mx-auto max-w-6xl">
+
+          <div className="mb-8">
+            <p className="text-xs font-bold uppercase tracking-widest text-blue-600">
+              Project Management
+            </p>
+
+            <h2 className="mt-2 text-4xl font-black text-gray-900">
+              My Schedule
+            </h2>
+
+            <p className="mt-2 text-gray-500">
+              An overview of my project tasks and progress.
+            </p>
+          </div>
+
           <GanttChart tasks={mySchedule} />
+
         </div>
+      </section>
     </main>
   );
 }

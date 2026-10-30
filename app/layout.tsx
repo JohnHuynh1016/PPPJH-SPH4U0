@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import React from "react"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,18 +17,25 @@ export const metadata: Metadata = {
   description: "John Huynh",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({
+  children,
+}: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
+    <html
+      lang="en"
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+    >
       <head>
-        {/* Forces styles to be ready BEFORE the layout builds to resolve lagging and styling issues */}
-        <link 
-          rel="stylesheet" 
-          href="https://cdn.jsdelivr.net/npm/frappe-gantt/dist/frappe-gantt.css" 
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/frappe-gantt@1.2.2/dist/frappe-gantt.css"
         />
       </head>
+
       <body className="min-h-full flex flex-col">
-        <main className="flex-1">{children}</main>
+        <main className="flex-1">
+          {children}
+        </main>
       </body>
     </html>
   );
