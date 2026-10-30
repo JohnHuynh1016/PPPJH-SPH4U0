@@ -6,6 +6,13 @@ import FloatingNav from '@/components/FloatingNav';
 import { useSound } from '@/hooks/useSound';
 import ResearchSlider from '@/components/ResearchSlider';
 import { useEffect } from "react";
+import React from "react";
+import dynamic from 'next/dynamic';
+
+const GanttChart = dynamic(
+  () => import('@/components/GanttChart').then((mod) => mod.GanttChart),
+  { ssr: false }
+);
 
 export default function HomePage() {
   const { playHover } = useSound();
@@ -26,6 +33,23 @@ export default function HomePage() {
       return () => clearTimeout(timer);
     }
   }, []);
+
+  const mySchedule = [
+    {
+      id: 'task-1',
+      name: 'Website Architecture Planning',
+      start: '2026-11-01',
+      end: '2026-11-05',
+      progress: 100,
+    },
+    {
+      id: 'task-2',
+      name: 'asdasd Architecture Planning',
+      start: '2026-11-02',
+      end: '2026-11-05',
+      progress: 100,
+    },
+  ];
 
   return (
     // "scroll-smooth" enables the smooth gliding motion when anchor links are clicked
@@ -197,20 +221,7 @@ export default function HomePage() {
 
       </div>
       </section>
-
-      {/* Section 3: Tech Stack */}
-      {/*<section 
-        id="tech" 
-        className="min-h-screen flex flex-col justify-center items-center px-6 pt-28 text-center bg-gray-50"
-      >
-        <h2 className="text-4xl font-bold mb-4">Post #2: Research</h2>
-        <p className="text-lg text-gray-600 max-w-2xl">
-          Do horizontal post (https://eddy-naboulet.dev/) Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-        <div className="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center text-left">
-        
-      </div>
-      </section>*/}
+      
       <ResearchSlider />
 
 
@@ -224,6 +235,11 @@ export default function HomePage() {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </p>
       </section>
+        <div style={{ padding: '40px' }}>
+          <h1>My Schedule</h1>
+          {/* 3. Render your component */}
+          <GanttChart tasks={mySchedule} />
+        </div>
     </main>
   );
 }

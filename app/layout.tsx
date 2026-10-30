@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-//import Navbar from '@/components/Navbar';
+import React from "react"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,17 +20,16 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
+      <head>
+        {/* Forces styles to be ready BEFORE the layout builds to resolve lagging and styling issues */}
+        <link 
+          rel="stylesheet" 
+          href="https://cdn.jsdelivr.net/npm/frappe-gantt/dist/frappe-gantt.css" 
+        />
+      </head>
       <body className="min-h-full flex flex-col">
-        {/*1. Navbar renders here at the top of every page*/}
-
-        {/*2. Main content takes up the remaining vertical space*/}
-        <main className="flex-1">
-          {children}
-        </main>
+        <main className="flex-1">{children}</main>
       </body>
     </html>
   );
