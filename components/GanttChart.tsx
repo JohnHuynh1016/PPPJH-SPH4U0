@@ -24,18 +24,21 @@ interface GanttInstance {
   scroll_current: () => void;
 }
 
+interface GanttOptions {
+  readonly: boolean;
+  view_mode: ViewMode;
+  date_format: string;
+  language: string;
+  scroll_to: string;
+  bar_height: number;
+  padding: number;
+  infinite_padding: boolean;
+}
+
 type GanttConstructor = new (
   element: HTMLElement,
   tasks: Task[],
-  options: {
-    readonly: boolean;
-    view_mode: ViewMode;
-    date_format: string;
-    language: string;
-    scroll_to: string;
-    bar_height: number;
-    padding: number;
-  }
+  options: GanttOptions
 ) => GanttInstance;
 
 // Tell TypeScript about the global CDN library.
