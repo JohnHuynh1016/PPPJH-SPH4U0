@@ -101,7 +101,7 @@ export function GanttChart({ tasks }: GanttChartProps) {
 
         // Generate 3 invisible rows.
         const spacerTasks: Task[] = Array.from(
-        { length: 3 },
+        { length: 1 },
         (_, index) => ({
             id: `spacer-${index + 1}`,
             name: "",
@@ -129,6 +129,7 @@ export function GanttChart({ tasks }: GanttChartProps) {
 
           bar_height: 26,
           padding: 16,
+          infinite_padding: false,
         }
       );
 
@@ -171,11 +172,11 @@ export function GanttChart({ tasks }: GanttChartProps) {
 
         <div>
           <h3 className="text-lg font-bold text-gray-900">
-            Project Timeline
+            Gantt Chart
           </h3>
 
           <p className="text-sm text-gray-500">
-            {tasks.length} scheduled tasks
+            This Gantt Chart uses [Frappe Gantt] by [Frappe Technologies](https://frappe.io), which is licensed under the MIT License.
           </p>
         </div>
 

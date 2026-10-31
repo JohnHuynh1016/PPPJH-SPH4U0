@@ -185,4 +185,20 @@ body {
   .gantt .bar-wrapper.gantt-spacer {
     display: none !important;
   }
+
+  .bar-purple rect.bar {
+      fill: #7428a7 !important;
+  }
+  
+  .bar-yellow rect.bar {
+      fill: #ebef10 !important;
+  }
+
+  .bar-green rect.bar {
+      fill: #3da728 !important;
+  }
+
+  .bar-grey rect.bar {
+      fill: #7e7f7e89 !important;
+  }
 }

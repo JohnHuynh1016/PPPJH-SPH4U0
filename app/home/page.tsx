@@ -12,17 +12,166 @@ import { GanttChart, type Task } from '@/components/GanttChart';
 const mySchedule: Task[] = [
   {
     id: 'task-1',
-    name: 'Website Architecture Planning',
-    start: '2026-11-01',
-    end: '2026-11-05',
+    name: 'Complete Plan of Action',
+    start: '2026-10-25',
+    end: '2026-10-30',
     progress: 100,
   },
   {
     id: 'task-2',
-    name: 'Architecture Planning',
-    start: '2026-11-02',
-    end: '2026-11-05',
-    progress: 100,
+    name: 'Secondary Research',
+    start: '2026-11-06',
+    end: '2026-11-16',
+    progress: 0,
+    custom_class: 'bar-yellow'
+  },
+  {
+    id: 'task-3',
+    name: "Mach, Reynold's number, and Bernoulli's principle",
+    start: '2026-11-06',
+    end: '2026-11-10',
+    progress: 15,
+  },
+  {
+    id: 'task-4',
+    name: "Exploring Lift, Drag, and Weight Equations and Coefficients",
+    start: '2026-11-06',
+    end: '2026-11-10',
+    progress: 6,
+    dependencies: 'task-3'
+  },
+  {
+    id: 'task-5',
+    name: 'Principles and Applications of Aerodynamic Simulation',
+    start: '2026-11-10',
+    end: '2026-11-14',
+    progress: 7,
+    dependencies: 'task-4'
+  },
+  {
+    id: 'task-6',
+    name: 'Tunnel Types & Scaling Laws',
+    start: '2026-11-10',
+    end: '2026-11-16',
+    progress: 0,
+    dependencies: 'task-5'
+  },
+  {
+    id: 'task-7',
+    name: 'Primary Research',
+    start: '2026-11-16',
+    end: '2026-11-26',
+    progress: 0,
+    custom_class: 'bar-yellow'
+  },
+  {
+    id: 'task-8',
+    name: 'Miniturized Wind Tunnel System Design',
+    start: '2026-11-18',
+    end: '2026-11-22',
+    progress: 0,
+  },
+  {
+    id: 'task-9',
+    name: 'Wind Tunnel Prototyping',
+    start: '2026-11-18',
+    end: '2026-12-12',
+    progress: 0,
+    dependencies: 'task-8'
+  },
+  {
+    id: 'task-10',
+    name: 'Simulate Circuit System',
+    start: '2026-11-22',
+    end: '2026-11-30',
+    progress: 0,
+    dependencies: 'task-9'
+  },
+  {
+    id: 'task-11',
+    name: 'Gathering Materials & Fog Testing',
+    start: '2026-11-30',
+    end: '2026-12-05',
+    progress: 0,
+    dependencies: 'task-10'
+  },
+  {
+    id: 'task-12',
+    name: 'Implementation & Review',
+    start: '2026-12-05',
+    end: '2026-12-12',
+    progress: 0,
+    dependencies: 'task-11'
+  },
+  {
+    id: 'task-13',
+    name: 'Trials',
+    start: '2026-12-12',
+    end: '2026-12-18',
+    progress: 0,
+    dependencies: 'task-12'
+  },
+  {
+    id: 'task-14',
+    name: 'Complete Build / Experiment / Demonstration',
+    start: '2026-11-06',
+    end: '2026-12-18',
+    progress: 0,
+    custom_class: 'bar-yellow'
+  },
+  {
+    id: 'task-15',
+    name: 'Complete Build / Experiment / Demonstration',
+    start: '2026-12-05',
+    end: '2026-12-21',
+    progress: 0,
+  },
+  {
+    id: 'task-16',
+    name: 'Complete Script & Trifold',
+    start: '2026-11-06',
+    end: '2027-01-04',
+    progress: 0,
+    custom_class: 'bar-yellow'
+  },
+  {
+    id: 'task-17',
+    name: 'Data Gathering',
+    start: '2026-12-21',
+    end: '2027-01-04',
+    progress: 0,
+    custom_class: 'bar-grey'
+  },
+  {
+    id: 'task-18',
+    name: 'Presentation',
+    start: '2027-01-05',
+    end: '2027-01-06',
+    progress: 0,
+    custom_class: 'bar-green'
+  },
+  {
+    id: 'task-19',
+    name: 'Collection',
+    start: '2027-01-05',
+    end: '2027-01-11',
+    progress: 0,
+  },
+  {
+    id: 'task-20',
+    name: 'Final Reflection and Explanation',
+    start: '2027-01-06',
+    end: '2027-01-11',
+    progress: 0,
+    dependencies: 'task-19'
+  },
+  {
+    id: 'task-21',
+    name: 'Final Post',
+    start: '2027-01-11',
+    end: '2027-01-11',
+    progress: 0,
+    custom_class: 'bar-purple'
   },
 ];
 
@@ -220,40 +369,32 @@ export default function HomePage() {
       <ResearchSlider />
 
 
-      {/* Section 4: Contact */}
+      <section
+        id="4"
+        className="bg-gray-50 px-6 py-20"
+      >
+        <div className="mx-auto max-w-6xl">
+          <div className="mb-8">
+            <h2 className="text-4xl font-bold mb-4 px-2">
+              Post #3: Plan of Action
+            </h2>
+            <p className="mt-2 text-gray-500 px-2">
+              This plan presents a detailed timeline from October 2026 to January 2027 for the research, simulation, construction, and testing of a miniature wind tunnel system, leading up to the preparation of presentation materials. The initial two weeks will focus on researching the principles and forces related to aerodynamics, as well as examining how various shapes respond differently to air under diverse conditions. Furthermore, the main research phase will involve not only studying wind tunnel models but also understanding scaling laws to effectively replicate high-speed and varying altitude environments for small objects. A significant amount of remainder time will be dedicated to obtaining the necessary resources and conducting experiments to prevent any unforeseen delays, allowing for ample time to prepare the trifold and visuals.
+            </p>
+          </div>
+          <GanttChart tasks={mySchedule} />
+        </div>
+      </section>
       <section 
-        id="4" 
+        id="5" 
         className="min-h-screen flex flex-col justify-center items-center px-6 text-center bg-white"
       >
-        <h2 className="text-4xl font-bold mb-4">Post #3: Topic Selection</h2>
+        <h2 className="text-4xl font-bold mb-4">Post #4: Topic Selection</h2>
         <p className="text-lg text-gray-600 max-w-2xl">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </p>
       </section>
-      <section
-        id="schedule"
-        className="bg-gray-50 px-6 py-20"
-      >
-        <div className="mx-auto max-w-6xl">
 
-          <div className="mb-8">
-            <p className="text-xs font-bold uppercase tracking-widest text-blue-600">
-              Project Management
-            </p>
-
-            <h2 className="mt-2 text-4xl font-black text-gray-900">
-              My Schedule
-            </h2>
-
-            <p className="mt-2 text-gray-500">
-              An overview of my project tasks and progress.
-            </p>
-          </div>
-
-          <GanttChart tasks={mySchedule} />
-
-        </div>
-      </section>
     </main>
   );
 }
